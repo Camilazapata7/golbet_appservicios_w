@@ -26,7 +26,7 @@ public class MatchesController : Controller
     public async Task<IActionResult> Index(MatchStatus? status, string? search)
     {
         ViewBag.CurrentStatus = status;
-        ViewBag.CurrentSearch = search; // Guardamos el texto de búsqueda para conservarlo en la vista
+        ViewBag.CurrentSearch = search;
 
         var board = await _matchService.GetBoardAsync(status, search);
         return View(board);
